@@ -1,0 +1,9 @@
+server:
+  port: 8082 # 【请根据实际情况填写】租赁服务的端口
+spring:
+  application:
+    name: lease-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 # 【请根据实际情况填写】Nacos地址
