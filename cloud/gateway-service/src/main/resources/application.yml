@@ -1,0 +1,20 @@
+server:
+  port: 9000 # 【请根据实际情况填写】这是对外暴露的统一端口，建议用 8080 或 80
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 # 【请根据实际情况填写】你的 Nacos 服务端地址
+    gateway:
+      routes: # 配置路由规则
+        - id: lease-route                  # 路由的唯一标识，起个有意义的名字即可
+          uri: lb://lease-service          # lb代表LoadBalance(负载均衡)，后面跟着 Nacos 里的服务名
+          predicates:
+            - Path=/lease/**               # 拦截规则：只要是以 /lease/ 开头的请求，全转给 lease-service
+
+        - id: user-route
+          uri: lb://user-service
+          predicates:
+            - Path=/user/**                # 拦截规则：只要是以 /user/ 开头的请求，全转给 user-service

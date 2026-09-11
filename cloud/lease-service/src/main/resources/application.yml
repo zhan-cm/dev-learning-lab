@@ -1,0 +1,27 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: lease-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848 # Nacos配置中心的地址
+    sentinel:
+      transport:
+        dashboard: localhost:8090 # 【请根据实际情况填写】指定刚才启动的 Sentinel 控制台地址
+  config:
+    import:
+      - nacos:lease-service.yaml?refreshEnabled=true  # 【核心】告诉SpringBoot去Nacos读取这个文件，并开启自动刷新
+
+
+seata:
+  enabled: true
+  tx-service-group: default_tx_group # 事务群组名称，随便起，但上下要一致
+  service:
+    vgroup-mapping:
+      default_tx_group: default # 将上面的群组映射到默认的集群
+    grouplist:
+      default: 127.0.0.1:8091 # 【请根据实际情况填写】你的 Seata 服务端(TC)的 IP 和端口
