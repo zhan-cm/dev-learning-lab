@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 对象创建
+            方式一：使用new关键字创建对象
+                语法：var 对象名 = new Object();
+                创建对象，并给对象添加属性和方法
+            方式二：使用对象字面量的方式创建对象
+                语法：var 对象名 = {属性名1:属性值1, 属性名2:属性值2, ...};
+                创建对象，并给对象添加属性和方法
+         */
+        var person = new Object();
+        person.name = '张三';
+        person.age = 18;
+        person.sex = '男';
+        person.show = function(){
+            console.log(this.name + ',' + this.age + ',' + this.sex);
+        }
+        person.show();
+
+        var person = {
+            name: '张三',
+            age: 18,
+            sex: '男',
+        }
+    </script>
+</head>
+<body>
+    
+
+</body>
+</html>

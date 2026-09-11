@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jdbc>
+    <dev>
+        <username>root</username>
+        <password>root</password>
+        <diver>com.mysql.cj.jdbc.Driver</driver>
+        <url>jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Shanghai</url>
+    </dev>
+    <test>
+        <username>root</username>
+        <password>root</password>
+        <diver>com.mysql.cj.jdbc.Driver</driver>
+        <url>jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Shanghai</url>
+    </test>
+    <formal> 
+        <username>root</username>
+        <password>root</password>
+        <diver>com.mysql.cj.jdbc.Driver</driver>
+        <url>jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Shanghai</url>
+    </formal>
+    <dev>
+<jdbc>

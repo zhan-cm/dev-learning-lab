@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            background-color: red;
+            width: 200px;
+            height: 50px;
+            border: 2px solid black;
+            color: white;
+            font-size: large;
+            border-radius: 5px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="css引入.css">
+</head>
+<body>
+    <!-- 引入方式
+        方式一 行内式
+            通过元素的style属性引入央视
+            语法：style="属性:值;属性:值;" 
+            缺点：1.代码复用度低，不利于维护
+                2.css样式和html代码耦合在一起，不利于代码的阅读  
+        
+       方式二 内嵌式
+            通过在head标签中创建style标签，在style标签中定义样式
+            通过选择器确定样式的作用元素
+            语法：<style>样式</style>
+            缺点：1.代码复用度低，不利于维护
+                2.css样式和html代码耦合在一起，不利于代码的阅读
+
+        方式三 外链式
+            通过创建一个css文件，将样式定义在css文件中
+            语法：<link rel="stylesheet" href="css文件路径">
+            优点：1.代码复用度高，便于维护
+
+            
+    -->
+    <input type="button" value="按钮"
+        style="
+            background-color: red;
+            width: 200px;
+            height: 50px;
+            border: 2px solid black;
+            color: white;
+            font-size: large;
+            border-radius: 5px;">
+</body>
+</html>

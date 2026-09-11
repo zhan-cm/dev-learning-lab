@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .innerDiv {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border: 2px solid black;
+            float: left;
+        }
+        .d1{
+            background-color: green;
+            margin-right: 20px;
+        }
+        /*盒子模型
+        1.内容(content):盒子中显示内容的区域
+        2.内边距(padding):盒子与内容之间的距离
+        3.边框(border):盒子与内边距之间的距离
+        4.外边距(margin):盒子与边框之间的距离
+        */
+    </style>
+</head>
+<body>
+    <div style="background-color: rgb(208, 208, 179); width: 1000px; height: 1000px;">
+        <div class="innerDiv d1">div1</div>
+        <div class="innerDiv">div2</div>
+        <div class="innerDiv">div3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        1 元素选择器  根据元素名称进行选择
+            语法：元素名{属性:值;属性:值;}
+            缺点：只能选择一个元素
+        2 id选择器  根据元素的id属性值进行选择
+            语法：#id值{属性:值;属性:值;}
+            优点：1.id属性值唯一，能唯一标识一个元素
+                2.优先级高
+            缺点：只能选择一个元素
+        3 类选择器  根据元素的class属性值进行选择
+            语法：.class值{属性:值;属性:值;}
+            优点：1.class属性值可以重复，能标识多个元素
+                2.优先级中
+            缺点：只能选择一个元素
+        */
+        input{
+            background-color: red;
+            width: 200px;
+            height: 50px;
+            border: 2px solid black;
+            color: white;
+            font-size: large;
+            border-radius: 5px;
+            margin: 10px; 
+        }
+        #btn1{
+            background-color: blue;
+        }
+
+        .btn{
+            background-color: yellow;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <input id="btn1" type="button" value="单选按钮"/>
+    <input class="btn"  type="button" value="单选按钮"/>
+    <input id="btn3" type="button" value="单选按钮"/>
+    <input id="btn4" type="button" value="单选按钮"/>
+    <input type="button" value="单选按钮"/>
+    
+</body>
+</html>

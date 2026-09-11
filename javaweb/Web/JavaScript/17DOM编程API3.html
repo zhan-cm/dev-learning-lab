@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            1.获取document dom树
+                window.document
+            2.从document中获取要操作的元素
+                1.直接获取
+                    var username = document.getElementById("username");
+                    var password = document.getElementById("password");
+                    var email = document.getElementById("email");
+                    var address = document.getElementById("address");
+                    var inputs = document.getElementsByTagName("input");
+                    var names = document.getElementsByName("aaa");
+                    var divs = document.getElementsByClassName("div01");
+                2.间接获取
+                    1.根据父元素获取子元素
+                        var div01 = document.getElementById("div0")
+                        var cs = div01.children;
+                    2.根据子元素获取父元素
+                        var username = document.getElementById("username");
+                        var parent = username.parentElement;
+                    3.根据当前元素获取兄弟元素
+                        var username = document.getElementById("username");
+                        var next = username.nextElementSibling;
+                        var prev = username.previousElementSibling;
+            3.操作元素
+                1.操作元素的属性    元素名.属性名=""
+                2.操作元素的样式    元素名.style.样式名="样式值"，样式名驼峰命名法
+                3.操作元素的文本    元素名.innerText="" 或 元素名.innerHTML="" 区别：
+                                    innerText：只显示文本，不显示标签
+                                    innerHTML：显示文本和标签    
+                4.增删元素       document.createElement("标签名")   
+                                parent.appendChild(子元素)   
+                                parent.insertBefore(子元素,参考元素)   
+                                parent.removeChild(子元素)   
+                                parent.replaceChild(新元素,旧元素)
+        */
+        function addCs(){
+            var city = document.getElementsById("city");
+            var xian = document.createElement("li");
+            xian.id = "xa";
+            xian.innerText = "西安";
+            city.appendChild(xian);
+            city.insertBefore(xian,city.children[2]);
+            city.removeChild(city.children[0]);
+            city.replaceChild(xian,city.children[1]);
+        }
+    </script>
+</head>
+<body>
+    <ul id="city">
+        <li id="bj">北京</li>
+        <li id="sh">上海</li>
+        <li id="sz">深圳</li>
+        <li id="gz">广州</li>
+    </ul>
+    
+    <hr>
+    <!-- 目标1 在城市列表的最后添加一个子元素 "西安" -->
+    <button onclick="addCs()">操作属性</button>
+</body>
+</html>

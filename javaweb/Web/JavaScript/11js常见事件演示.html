@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function click(){
+            alert("点击了");
+        }
+        function click1(){
+            alert("点击了1");
+        }
+        function click2(){
+            alert("点击了2");
+        }
+        /*
+        1 事件的绑定方式
+            1 通过元素的属性绑定
+            2 通过DOM编程动态绑定
+            注意事项：
+                1.一个事件可以同时绑定多个函数
+                2.一个元素可以同时绑定多个事件
+        2 常见的事件
+            1 鼠标事件
+                onclick 鼠标单击
+                ondblclick 鼠标双击
+                onmouseover 鼠标移入
+                onmouseout 鼠标移出
+                onmousemove 鼠标移动
+                onmousedown 鼠标按下
+            2 键盘事件
+                onkeydown 键盘按下
+                onkeyup 键盘抬起
+                onkeypress 键盘按下并抬起
+            3 表单事件
+                onfocus 获取焦点
+                onblur 失去焦点
+                onchange 值改变,并且失去焦点
+                onsubmit 表单提交
+            4 页面加载事件
+                onload 页面加载完成
+                onunload 页面卸载
+        3 事件的触发
+            1 行为触发
+            2 DOM编程触发
+        */        
+        function testFocus(){
+            console.log("获取焦点");
+        }
+        function testBlur(){
+            console.log("失去焦点");
+        }
+        function testChange(value){
+            console.log("值改变为："+value);
+        }
+        function testSubmit(){
+            /*
+            弹窗的三种方式
+            1 alert()   消息提示框
+            2 confirm() 确认框
+            3 prompt()  输入框
+            */
+            var result = confirm("确定提交表单吗？");
+            if(!result){
+
+                event.preventDefault();//阻止表单提交
+            }
+        }
+        function testReset(){
+            console.log("表单重置了");
+        }
+    </script>
+</head>
+<body>
+    <form action="" method="get" onsubmit="testSubmit()" onreset="testReset()">
+        用户昵称：<input 
+            type="text" 
+            name="realName"
+            onfocus="testFocus()"
+            onblur="testBlur()"
+            onchange="testChange(this.value)"><br/>
+        登陆账号：<input type="text" name="userName"><br/>
+        选择籍贯：<select onchange="testChange(this.value)">
+            <option value="1">部门1</option>
+            <option>部门2</option>
+            <option>部门3</option>
+        </select><br/>
+        <input type="submit" value="注册">
+        <input type="reset" value="重置">
+    </form>
+
+
+
+
+    <!-- <input type="button" value="按钮" onclick="click(),click1(),click2()"/> -->
+</body>
+</html>

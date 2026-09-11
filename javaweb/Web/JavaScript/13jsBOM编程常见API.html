@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            history 窗口的访问历史
+            location 窗口的地址栏信息
+            sessionStorage 会话级存储(浏览器关闭后数据丢失)
+            localStorage 本地存储(浏览器关闭后数据保存)
+        */
+        function fun1(){
+            window.alert("这是一个信息提示框");
+        }
+        function fun2(){
+            var res = window.prompt("这是一个信息输入框，请输入内容：","默认值");
+            console.log("输入的内容是："+res);
+        }
+        function fun3(){
+            var res = window.confirm("这是一个信息确认框，是否继续？");
+            console.log("确认框的返回值是："+res);
+        }
+        function fun4(){//延迟执行
+            window.setTimeout(function(){
+                console.log("hello");
+            },2000);
+        }
+        function funA(){
+            window.history.back();
+            console.log("返回上一页");
+            //window.history.go(-1);//返回指定页面
+        }
+        function funB(){
+            window.history.forward();
+        }
+        function funC(){
+            window.location.href = "https://www.baidu.com";//跳转到指定页面
+        }
+        function funD(){
+            //localStorage
+            localStorage.setItem("name","张三");
+            localStorage.setItem("age",18);
+            // sessionStorage
+            sessionStorage.setItem("name","张三");
+            sessionStorage.setItem("age",18);
+        }
+        function funE(){
+            var name = localStorage.getItem("name");
+            var age = localStorage.getItem("age");
+            console.log("姓名："+name+"，年龄："+age);
+        }
+        function funF(){
+            localStorage.removeItem("name");
+            localStorage.removeItem("age");
+        }
+    </script>
+</head>
+<body>
+    <button onclick="funD()">存储数据</button>
+    <button onclick="funE()">获取数据</button>
+    <button onclick="funF()">删除数据</button>
+
+    <hr>
+    <button onclick="funC()">百度</button>
+
+
+    <hr>
+    <button onclick="funA()">上一页</button>
+    <button onclick="funB()">下一页</button>
+
+    <hr>
+    <button onclick="fun1()">信息提示框</button>
+    <button onclick="fun2()">信息输入框</button>
+    <button onclick="fun3()">信息确认框</button>
+    <button onclick="fun4()">两秒钟后向控制台打印hello</button>
+</body>
+</html>

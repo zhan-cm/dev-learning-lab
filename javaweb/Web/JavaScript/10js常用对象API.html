@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var date = new Date();
+        console.log(date.getFullYear());//获取年份
+        console.log(date.getMonth()+1);//获取月份，注意月份是从0开始的，所以要加1
+        console.log(date.getDate());//获取日期
+        console.log(date.getDay());//获取星期几，0表示星期天，1表示星期一，以此类推
+        console.log(date.getHours());//获取小时 0-23    
+        console.log(date.getMinutes());//获取分钟
+        console.log(date.getSeconds());//获取秒数
+        console.log(date.getMilliseconds());//获取毫秒数
+        console.log(date.getTime());//获取时间戳，表示从1970年1月1日0时0分0秒到当前时间之间所经过的毫秒数
+        console.log(date.toLocaleString());//将日期转换为字符串，根据本地时间格式显示
+
+        date.setFullYear(2020);//设置年份
+        date.setMonth(11);//设置月份，注意月份是从0开始的，所以12月为11
+        date.setDate(25);//设置日期
+        date.setHours(10);//设置小时    
+        date.setMinutes(30);//设置分钟
+        date.setSeconds(45);//设置秒数          
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

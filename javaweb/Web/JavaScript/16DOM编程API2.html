@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            1.获取document dom树
+                window.document
+            2.从document中获取要操作的元素
+                1.直接获取
+                    var username = document.getElementById("username");
+                    var password = document.getElementById("password");
+                    var email = document.getElementById("email");
+                    var address = document.getElementById("address");
+                    var inputs = document.getElementsByTagName("input");
+                    var names = document.getElementsByName("aaa");
+                    var divs = document.getElementsByClassName("div01");
+                2.间接获取
+                    1.根据父元素获取子元素
+                        var div01 = document.getElementById("div0")
+                        var cs = div01.children;
+                    2.根据子元素获取父元素
+                        var username = document.getElementById("username");
+                        var parent = username.parentElement;
+                    3.根据当前元素获取兄弟元素
+                        var username = document.getElementById("username");
+                        var next = username.nextElementSibling;
+                        var prev = username.previousElementSibling;
+            3.操作元素
+                1.操作元素的属性    元素名.属性名=""
+                2.操作元素的样式    元素名.style.样式名="样式值"，样式名驼峰命名法
+                3.操作元素的文本    元素名.innerText="" 或 元素名.innerHTML="" 区别：
+                                    innerText：只显示文本，不显示标签
+                                    innerHTML：显示文本和标签    
+                4.增删元素
+        */
+        function changeAttribute(){
+            var username = document.getElementById("in1");
+            username.value = "hello world";
+        }
+    </script>
+</head>
+<body>
+    <input id="in1" type="text" value="hello">
+
+    <hr>
+    <button onclick="changeAttribute()">变</button>
+</body>
+</html>

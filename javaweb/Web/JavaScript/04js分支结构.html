@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*根据月份输出季节*/
+        var month = prompt("请输入月份（1-12）");
+        month = Number.parseInt(month);
+
+        if (month >= 3 && month <= 5) {
+            console.log("春季")
+        } else if (month >= 6 && month <= 8) {
+            console.log("夏季")
+        } else if (month >= 9 && month <= 11) {
+            console.log("秋季")
+        } else {
+            console.log("冬季")
+        } 
+        /*switch语句*/
+        switch (month) {
+            case 3:
+            case 4:
+            case 5:
+                console.log("春季");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                console.log("夏季");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                console.log("秋季");
+                break;
+            default:
+                console.log("冬季");
+        }
+    </script>
+</body>
+
+</html>

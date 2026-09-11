@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* JSON格式的语法
+            var personStr ={"属性名1":属性值1,"属性名2":属性值2,...,"属性名n":{}}
+            属性名必须使用双引号括起来
+            属性值可以是字符串、数值、布尔值、数组、对象、null
+        
+        */
+        var personStr ={"name":"张三","age":18,"sex":"男","address":{"province":"广东","city":"广州"},"hobby":["唱歌","跳舞","打篮球"],"isStudent":false,"score":null};
+        console.log(personStr)
+        // 将JSON字符串转为JSON对象
+        var person = JSON.parse(personStr);
+        console.log(person);
+        // 将JSON对象转为JSON字符串
+        var personStr2 = JSON.stringify(person);
+        console.log(personStr2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
