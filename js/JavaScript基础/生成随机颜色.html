@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getRandom(flag){
+            let arr=['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+            if(flag){
+                let result='#'
+                for(let i=0;i<6;i++){
+                    let num =Math.floor(Math.random()*arr.length)
+                    result+=arr[num]
+                }
+                return result
+            }else{
+                let r = Math.floor(Math.random()*256)
+                let g = Math.floor(Math.random()*256)
+                let b = Math.floor(Math.random()*256)
+                return `rgb(${r},${g},${b})`
+            }
+        }
+        console.log(getRandom(true))
+        console.log(getRandom(false))
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box {
+            margin: 10px auto; /* 居中对齐整个 .box */
+            display: flex; /* 启用 Flexbox */
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            gap: 10px; /* 控制 input 和 button 之间的间距 */
+        } 
+        input {
+            display: inline-block;
+            width: 500px;
+            height: 50px;
+            border-radius: 10px;
+            border: 1px solid gray;
+            line-height: 50px;
+            font-size: 20px;
+            padding: 0 10px;   
+
+            
+        }
+        button {
+            display: inline-block;
+            height: 50px;
+            width: 50px;
+            background-color: skyblue;
+            color: white;
+            border-radius: 5px;
+            border: 0;
+
+            
+            
+        }
+        button:hover {
+            background-color: blue;
+        }
+        h4 {
+            text-align: center;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="search">
+        <button>发布</button>
+    </div>
+    <h4>0/200字</h4>
+    <script>
+        let i=0
+        const input =document.querySelector('[type=search]')
+        const h4 = document.querySelector('h4')
+        input.addEventListener('input',function(){
+            i++ 
+            if(i>200)
+                alert('字数限制在两百字以内')
+            h4.innerHTML=`${i}/200字`
+            //console.log(i)
+        })
+        input.addEventListener('keyup',function(e){
+            if(e.key === 'Enter'){
+                console.log(input.value)
+            }
+        })
+    </script>
+</body>
+</html>

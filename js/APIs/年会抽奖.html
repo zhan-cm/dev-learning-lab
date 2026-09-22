@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <strong>年会抽奖</strong>
+        <h1>一等奖:<span id="one">???</span></h1>
+        <h3>二等奖:<span id="two">???</span></h3>
+        <h5>三等奖:<span id="three">???</span></h5>
+    </div>
+
+    <script>
+        let arr = ['周杰伦', '刘登华', '周星驰', '张学友', '0721']
+        let num = Math.floor(Math.random() * arr.length)
+        let first = document.querySelector('#one')
+        first.innerHTML = arr[num]
+        arr.splice(num, 1)
+        num = Math.floor(Math.random() * arr.length)
+        let second = document.querySelector('#two')
+        second.innerHTML = arr[num]
+        arr.splice(num, 1)
+        num = Math.floor(Math.random() * arr.length)
+        let third = document.querySelector('#three')
+        third.innerHTML = arr[num]
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box ,table{
+            width: 500px;
+            height: 300px;
+        }
+        h4 {
+            text-align: center;
+        }
+        table, th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th,td {
+            text-align: center;
+        }
+        tr:first-child {
+            background-color: gray;
+        }
+        table tr:not(:first-child):hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <h1>学生信息</h1>
+    <p>将数据渲染到页面种...</p>
+    <div class="box">
+        <h4>学生列表</h4>
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>家乡</th>
+            </tr>
+            <script>
+                let students =[
+                    {name:'小明',age:18,gender:'男',hometown:'河北省'},
+                    {name:'小红',age:19,gender:'女',hometown:'河南省'},
+                    {name:'小刚',age:17,gender:'男',hometown:'山西省'},
+                    {name:'小李',age:18,gender:'女',hometown:'山东省'}
+                ]
+                for(let i=0;i<students.length;i++){
+                    document.write(`
+                        <tr>
+                            <td>${i+1}</td>
+                            <td>${students[i].name}</td>
+                            <td>${students[i].age}</td>
+                            <td>${students[i].gender}</td>
+                            <td>${students[i].hometown}</td>
+                        </tr>
+                    `)
+                }
+            </script>
+        </table>
+    </div>
+
+    
+</body>
+</html>

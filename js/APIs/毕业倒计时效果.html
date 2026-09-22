@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .countdown {
+            width: 240px;
+            height: 305px;
+            text-align: center;
+            line-height: 1;
+            color: #fff;
+            background-color: brown;
+            overflow: hidden;
+        }
+
+        .countdown .next {
+            font-size: 16px;
+        }
+
+        .countdown .title {
+            font-size: 33px;
+        }
+
+        .countdown .tips {
+            margin-top: 80px;
+            font-size: 23pz;
+        }
+
+        .countdown small {
+            font-size: 17px;
+        }
+
+        .countdown .clock {
+            width: 142px;
+            margin: 18px auto 0;
+            overflow: hidden;
+        }
+
+        .countdown .clock span,
+        .countdown .clock i {
+            display: block;
+            text-align: center;
+            line-height: 34px;
+            font-size: 23px;
+            float: left;
+        }
+
+        .countdown .clock span {
+            width: 34px;
+            height: 34px;
+            border-radius: 2px;
+            background-color: #303430;
+        }
+
+        .countdown .clock i {
+            width: 20px;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="countdown">
+        <p class="next">今天是2222年2月22日</p>
+        <p class="title">下班倒计时</p>
+        <p class="clock">
+            <span id="hour">00</span>
+            <i>:</i>
+            <span id="minutes">25</span>
+            <i>:</i>
+            <span id="second">20</span>
+        </p>
+        <p class="tips">18：30：00下课</p>
+    </div>
+    <script>
+        function getCountTime() {
+            const now = +new Date()
+
+            const last = +new Date('2028-9-1 18:30:00')
+            //得到剩余的时间戳count 记得转换为秒单位
+            const count = (last - now) / 1000
+
+            let h = parseInt(count / 60 / 60 % 24)
+            h = h < 10 ? '0' + h : h
+            let m = parseInt(count / 60 % 60)
+            m = m < 10 ? '0' + m : m
+            let s = parseInt(count % 60)
+            s = s < 10 ? '0' + s : s
+
+
+            //把时分秒写到对应的盒子里面
+            const hour = document.querySelector('#hour').innerHTML = h
+            const minutes = document.querySelector('#minutes').innerHTML = m
+            const second = document.querySelector('#second').innerHTML = s
+        }
+        getCountTime()
+        setInterval(getCountTime, 1000)
+
+    </script>
+</body>
+
+</html>
